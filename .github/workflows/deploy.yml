@@ -55,7 +55,9 @@ jobs:
         run: |
           aws ecs describe-task-definition \
             --task-definition hector-task \
-            --query taskDefinition > task-definition.json
+            --query taskDefinition \
+            | jq 'del(.enableFaultInjection, .taskDefinitionArn, .revision, .status, .requiresAttributes, .compatibilities, .registeredAt, .registeredBy)' \
+            > task-definition.json
 
       - name: Actualizar imagen en task definition
         id: task-def
