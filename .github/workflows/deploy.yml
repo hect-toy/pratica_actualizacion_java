@@ -10,7 +10,7 @@ env:
   ECR_REGISTRY: 035379288641.dkr.ecr.us-east-2.amazonaws.com
   ECR_REPOSITORY: aws-practica
   ECS_CLUSTER: hector-cluster
-  ECS_SERVICE: hector-service
+  ECS_SERVICE: hector-task-service-1xpdx3mi
   CONTAINER_NAME: aws-practica
 
 jobs:
